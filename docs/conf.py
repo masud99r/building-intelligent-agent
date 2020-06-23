@@ -80,27 +80,59 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_theme' # sphinx_rtd_theme, alabaster
+html_theme = 'sphinx_materialdesign_theme' # sphinx_materialdesign_theme, sphinx_rtd_theme, alabaster
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
 html_theme_options = {
-	'canonical_url': '',
-    'analytics_id': 'UA-XXXXXXX-1',  #  Provided by Google in your dashboard
-    'logo_only': False,
-    'display_version': False,
-    'prev_next_buttons_location': 'bottom',
-    'style_external_links': False,
-    'vcs_pageview_mode': '',
-    'style_nav_header_background': '',
-    # Toc options
-    'collapse_navigation': True,
-    'sticky_navigation': True,
-    'navigation_depth': 4,
-    'includehidden': True,
-    'titles_only': False
+    # Specify a list of menu in Header.
+    # Tuples forms:
+    #  ('Name', 'external url or path of pages in the document', boolean, 'icon name')
+    #
+    # Third argument:
+    # True indicates an external link.
+    # False indicates path of pages in the document.
+    #
+    # Fourth argument:
+    # Specify the icon name.
+    # For details see link.
+    # https://material.io/icons/
+    'header_links' : [
+        ('Home', 'index', False, 'home'),
+        ("ExternalLink", "http://mmasud.me/", True, 'launch'),
+        ("NoIconLink", "http://mmasud.me/", True, ''),
+        ("GitHub", "https://github.com/masud99r/building-intelligent-agent", True, 'link')
+    ],
+
+    # Customize css colors.
+    # For details see link.
+    # https://getmdl.io/customize/index.html
+    #
+    # Values: amber, blue, brown, cyan deep_orange, deep_purple, green, grey, indigo, light_blue,
+    #         light_green, lime, orange, pink, purple, red, teal, yellow(Default: indigo)
+    'primary_color': 'indigo',
+    # Values: Same as primary_color. (Default: pink)
+    'accent_color': 'pink',
+
+    # Customize layout.
+    # For details see link.
+    # https://getmdl.io/components/index.html#layout-section
+    'fixed_drawer': True,
+    'fixed_header': True,
+    'header_waterfall': True,
+    'header_scroll': False,
+
+    # Render title in header.
+    # Values: True, False (Default: False)
+    'show_header_title': False,
+    # Render title in drawer.
+    # Values: True, False (Default: True)
+    'show_drawer_title': True,
+    # Render footer.
+    # Values: True, False (Default: True)
+    'show_footer': True
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
